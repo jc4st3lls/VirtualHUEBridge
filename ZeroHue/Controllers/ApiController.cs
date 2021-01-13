@@ -27,14 +27,10 @@ namespace ZeroHue.Controllers
             _lightservice = lightmessageservice.LightService;
         }
 
-        // GET: api/values
         [HttpGet("{username}/lights")]
         public async Task<ActionResult<IDictionary<string,HueLight>>> GetLigths(string username)
         {
-            //var ligths = await System.IO.File.ReadAllTextAsync("./Models/huelights.json");
-            //System.Text.Json.JsonDocument jdoc = System.Text.Json.JsonDocument.Parse(ligths);
-
-            //return Ok(jdoc.RootElement);
+            if (!PassSecurity(username)) return Unauthorized();
 
             var lights = await _lightservice.GetAll();
 
@@ -42,44 +38,19 @@ namespace ZeroHue.Controllers
 
         }
 
-        // GET api/values/5
+    
+
         [HttpGet("{username}/lights/{id}")]
         public async Task<ActionResult<HueLight>> Get(string username,int id)
         {
-            //var ligth = await System.IO.File.ReadAllTextAsync($"./Models/light{id}.json");
-            //System.Text.Json.JsonDocument jdoc = System.Text.Json.JsonDocument.Parse(ligth);
-
-            //return Ok(jdoc.RootElement);
-
+            if (!PassSecurity(username)) return Unauthorized();
             var huelight = await _lightservice.Get(id);
 
             return Ok(huelight);
             
         }
 
-        // POST api/values
-        //[HttpPost]
-        //public async Task<ActionResult> Post()
-        //{
-
-        //    //{"devicetype": "my_hue_app#iphone peter"}
-
-        //    var reader = new StreamReader(Request.Body);
-        //    var value = await reader.ReadToEndAsync();
-        //    var requestData = System.Text.Json.JsonDocument.Parse(value);
-        //    var root = requestData.RootElement;
-        //    var request = root.Get("devicetype").Value;
-
-        //    //{"devicetype": "Echo"}
-        //    if (request.ValueEquals("Echo"))
-        //    {
-        //        var response= @"[{""success"":{""username"":""" + AppSet.USERNAME + @"""}}]";
-        //        System.Text.Json.JsonDocument jdoc = System.Text.Json.JsonDocument.Parse(response);
-
-        //        return Ok(jdoc.RootElement);
-        //    }
-        //    return NotFound();
-        //}
+        
 
         [HttpPost]
         public async Task<ActionResult<object[]>> Post([FromBody] Device device)
@@ -97,10 +68,13 @@ namespace ZeroHue.Controllers
             return NotFound();
         }
 
-        // PUT api/values/5
+        
         [HttpPut("{username}/lights/{id}/state")]
         public async Task<ActionResult> PutState(string username,int id, [FromBody] LightState value)
         {
+
+            if (!PassSecurity(username)) return Unauthorized();
+
             IList<string> response = new List<string>();
 
 
@@ -170,10 +144,12 @@ namespace ZeroHue.Controllers
 
         }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // Bad Security!!
+        private bool PassSecurity(string username)
         {
+            return username.Equals(AppSet.USERNAME)
+                || username.Equals(AppSet.VIEWUSERNAME);
         }
+
     }
 }
