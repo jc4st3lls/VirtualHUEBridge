@@ -14,23 +14,23 @@ Per saber com cerca dispositius l'Echo, vaig captura tots els paquets de xarxa d
 
  SSDP [https://es.wikipedia.org/wiki/SSDP](https://es.wikipedia.org/wiki/SSDP), concretament:
 
-SEARCH * HTTP/1.1
-HOST: 239.255.255.250:1900
-ST: ssdp:all
-MAN: "ssdp:discover"
-MX: 3
+    SEARCH * HTTP/1.1
+    HOST: 239.255.255.250:1900
+    ST: ssdp:all
+    MAN: "ssdp:discover"
+    MX: 3
 
-SEARCH * HTTP/1.1
-HOST: 239.255.255.250:1900
-ST: upnp:rootdevice
-MAN: "ssdp:discover"
-MX: 3
+    SEARCH * HTTP/1.1
+    HOST: 239.255.255.250:1900
+    ST: upnp:rootdevice
+    MAN: "ssdp:discover"
+    MX: 3
 
-M-SEARCH * HTTP/1.1
-HOST: 239.255.255.250:1900
-ST: ssdp:all
-MAN: "ssdp:discover"
-MX: 3
+    M-SEARCH * HTTP/1.1
+    HOST: 239.255.255.250:1900
+    ST: ssdp:all
+    MAN: "ssdp:discover"
+    MX: 3
 
 Tot seguit vaig adquirir un bridge i una bombeta. Ho vaig connectar a la xarxa i seguint les instruccions (cal prémer un botó per que es pugui detectar), vaig connectar-lo a l’Echo (prèviament havia connectat la bombeta a l’Echo). Ho vaig treure tot, i vaig repetir la operació (més d’un cop) per capturar la conversa que tenien ambdós per connectar-se. El resultat es pot explicar en dues fases. La primera és la connexió, el moment en que l’Echo i el bridge es connecten. I la segona fase, quan és connecta, com l’Echo interroga al bridge per saber com “funciona” i quins dispositius controla.
 
