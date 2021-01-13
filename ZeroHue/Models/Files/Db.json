@@ -1,0 +1,133 @@
+﻿{
+  "1": {
+    "state": {
+      "on": false,
+      "bri": 254,
+      "alert": "none",
+      "reachable": true
+    },
+    "type": "Dimmable light",
+    "name": "Luz B1",
+    "modelid": "LWB014",
+    "manufacturername": "Philips",
+    "uniqueid": "00:17:88:01:02:f5:31:22-0b",
+    "swversion": "1.15.2_r19181",
+    "swconfigid": "D1D2055F",
+    "productid": "Philips-LWB014-1-A19DLv3"
+  },
+  "2": {
+    "state": {
+      "on": false,
+      "bri": 254,
+      "alert": "none",
+      "reachable": true
+    },
+    "type": "Dimmable light",
+    "name": "Luz B2",
+    "modelid": "LWB014",
+    "manufacturername": "Philips",
+    "uniqueid": "00:17:88:01:02:8c:d9:05-0b",
+    "swversion": "1.15.2_r19181",
+    "swconfigid": "D1D2055F",
+    "productid": "Philips-LWB014-1-A19DLv3"
+  },
+  "3": {
+    "state": {
+      "on": false,
+      "bri": 254,
+      "hue": 65259,
+      "sat": 71,
+      "effect": "none",
+      "xy": [
+        0.4651,
+        0.3565
+      ],
+      "ct": 325,
+      "alert": "none",
+      "colormode": "xy",
+      "reachable": true
+    },
+    "type": "Extended color light",
+    "name": "Luz G1",
+    "modelid": "LLC020",
+    "manufacturername": "Philips",
+    "uniqueid": "00:17:88:01:01:18:50:42-0b",
+    "swversion": "5.38.1.14378"
+  },
+  "4": {
+    "state": {
+      "on": false,
+      "bri": 57,
+      "hue": 5448,
+      "sat": 233,
+      "effect": "none",
+      "xy": [
+        0.5639,
+        0.3904
+      ],
+      "ct": 248,
+      "alert": "none",
+      "colormode": "xy",
+      "reachable": true
+    },
+    "type": "Extended color light",
+    "name": "Luz G2",
+    "modelid": "LLC020",
+    "manufacturername": "Philips",
+    "uniqueid": "00:17:88:01:01:19:4e:16-0b",
+    "swversion": "5.38.1.14378"
+  },
+  "5": {
+    "capabilities": {
+      "certified": true,
+      "control": {
+        "ct": {
+          "max": 454,
+          "min": 153
+        },
+        "maxlumen": 2400,
+        "mindimlevel": 100
+      },
+      "streaming": {
+        "proxy": false,
+        "renderer": false
+      }
+    },
+    "config": {
+      "archetype": "ceilinground",
+      "direction": "downwards",
+      "function": "functional",
+      "startup": {
+        "configured": true,
+        "customsettings": {
+          "bri": 254,
+          "ct": 247
+        },
+        "mode": "custom"
+      }
+    },
+    "manufacturername": "Signify Netherlands B.V.",
+    "modelid": "LTC003",
+    "name": "Luz ambiente",
+    "productid": "ENA_LTC003_1_StillCeiling_v1",
+    "productname": "Hue ambiance ceiling",
+    "state": {
+      "alert": "select",
+      "bri": 254,
+      "colormode": "ct",
+      "ct": 247,
+      "mode": "homeautomation",
+      "on": false,
+      "reachable": true
+    },
+    "swconfigid": "19789229",
+    "swupdate": {
+      "lastinstall": "2020-03-24T05:28:27",
+      "state": "noupdates"
+    },
+    "swversion": "1.50.2_r30933",
+    "type": "Color temperature light",
+    "uniqueid": "00:17:88:01:06:13:e5:55-0b"
+  }
+
+}

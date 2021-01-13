@@ -38,4 +38,4 @@ Per saber com ho fa, podeu investigar el codi que deixo aquí o seguir el passos
 
 **Solució**
 
-En aquest repositori trobem una solució amb dos projectes desenvolupats amb Net Core 3.1. Cada projecte es correspon a les dues fases, la de connexió (cal executar el primer cop, quan l’Echo cerca, detecta i configura) i la api que emula el bridge (només bombetes), que cal sempre.
+En aquest repositori trobem una solució amb dos projectes desenvolupats amb Net Core 3.1. Cada projecte es correspon a una de les fases, la de connexió (cal executar el primer cop, quan l’Echo cerca, detecta i configura) i la api que emula el bridge (només bombetes), que cal sempre. A la api hi he afegit unes bombetes virtual a través d'una plana html.

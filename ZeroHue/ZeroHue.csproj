@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>454427a5-65db-4009-90c0-0112edd5dbae</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="Services\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Services\Repositories\" />
+    <Folder Include="Models\Files\" />
+    <Folder Include="Services\Hubs\" />
+    <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Models\Files\description.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\Files\description.xml" />
+  </ItemGroup>
+</Project>
