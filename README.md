@@ -86,4 +86,9 @@ A partir d'aquí, imaginació.
 
 Si volem controlar dispositius reals on/off, només cal fixar-nos en la interfície **INotificationService**, la implementació per a les bombetes virtuals **NotificationSignalRService** i el componet que actua quan es produeixen els esdeveniments **LightsMessageCenter**.
 
+**Donacions**
+BTC = bc1q33wmuc0lcwh4krchfmxrt4jak3v628z658f85j
+TRX = TRdxjgLv4nr8GYwsdXkUv4ZwCCTvfMqgnS
+ETH = 0x3582cf65c158b23bbbaee3e3a3158ce4b5d99978
 
+:_)
