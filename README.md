@@ -1,4 +1,4 @@
-## Emulate a PHILIPS HUE Bridge V3
+﻿## Emulate a PHILIPS HUE Bridge V3
 
 **Emulador d'un Bridge HUE V3 de Philips compatible amb Alexa**
 
@@ -38,4 +38,52 @@ Per saber com ho fa, podeu investigar el codi que deixo aquí o seguir el passos
 
 **Solució**
 
-En aquest repositori trobem una solució amb dos projectes desenvolupats amb Net Core 3.1. Cada projecte es correspon a una de les fases, la de connexió (cal executar el primer cop, quan l’Echo cerca, detecta i configura) i la api que emula el bridge (només bombetes), que cal sempre. A la api hi he afegit unes bombetes virtual a través d'una plana html.
+En aquest repositori trobem una solució amb dos projectes desenvolupats amb Net Core 3.1. Cada projecte es correspon a una de les fases, la de connexió (cal executar el primer cop, quan l’Echo cerca, detecta i configura) i la api que emula el bridge (només bombetes), que cal sempre. A la api hi he afegit unes bombetes virtuals a través d'una plana html.
+
+**Funcionamet**
+
+Primer de tot cal modificar alguns paràmetres de configuració. Al projecte que permet en "Discovery", cal modificar dins la classe AppSet.cs, les propietats:
+
+FrontendIP=[IP del front end de la API]
+
+EchoIP=[IP del Echo]
+
+Al projecte de la API, cal modificar el fitxer de configuració appsettings.json:
+
+
+    {
+      "Logging": {
+        "LogLevel": {
+          "Default": "Information",
+          "Microsoft": "Warning",
+          "Microsoft.Hosting.Lifetime": "Information"
+        }
+      },
+      "AllowedHosts": "*",
+      "UPNP": {
+        "FrontendIP": "**[IP del front end de la API]**",
+        "FrontendPort": "80"
+      },
+      "ApiPort": "**[Port accés a la API]**"
+    }
+
+FrontendIP=[IP del front end de la API]
+
+ApiPort=[Port accés a la API]
+
+La Api ara està programada perque corri en el port 80. Però si al host tenim un nginx, un apache o un IIS corrent (o altres), tindrant el port ocupat i no funcionarà. Aleshores hem de canviar el port de la api, i fer un reverse proxy des del nginx, apache o IIS cap al port de la API. També podem crear un contenidor de la Api i fer el mateix.
+
+Un cop fet això, engeguem primer de tot la API. S'obrirà una plana html molt simple, amb unes llums virtuals apagades.
+
+Tot seguit engeguem el projecte de "discovery". Aquest es manté a l'espera fins que rep solicituts del l'Echo.
+
+Un cop els dos estan funcionan, li diem al nostre Echo:
+**"Alexa, descubre dispositivos"**
+
+Si tot va bé, trobarà 5 bombetes, que es poden engegar i apagar. Si observeu la plana de les llums virtuals, veure-ho el resultat.
+
+A partir d'aquí, imaginació. 
+
+Si volem controlar dispositius reals on/off, només cal fixar-nos en la interfície **INotificationService**, la implementació per a les bombetes virtuals **NotificationSignalRService** i el componet que actua quan es produeixen els esdeveniments **LightsMessageCenter**.
+
+
