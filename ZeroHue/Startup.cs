@@ -22,6 +22,7 @@ namespace ZeroHue
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            AppSet.ApiPort= Configuration["ApiPort"];
             AppSet.FrontendIP = Configuration["UPNP:FrontendIP"];
             AppSet.FrontendPort = Configuration["UPNP:FrontendPort"];
             //192.16FFFE8.1.99

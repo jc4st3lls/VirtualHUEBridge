@@ -7,7 +7,7 @@
       "reachable": true
     },
     "type": "Dimmable light",
-    "name": "Luz B1",
+    "name": "Luz azul",
     "modelid": "LWB014",
     "manufacturername": "Philips",
     "uniqueid": "00:17:88:01:02:f5:31:22-0b",
@@ -23,7 +23,7 @@
       "reachable": true
     },
     "type": "Dimmable light",
-    "name": "Luz B2",
+    "name": "Luz amarilla",
     "modelid": "LWB014",
     "manufacturername": "Philips",
     "uniqueid": "00:17:88:01:02:8c:d9:05-0b",
@@ -48,7 +48,7 @@
       "reachable": true
     },
     "type": "Extended color light",
-    "name": "Luz G1",
+    "name": "Luz verde",
     "modelid": "LLC020",
     "manufacturername": "Philips",
     "uniqueid": "00:17:88:01:01:18:50:42-0b",
@@ -71,7 +71,7 @@
       "reachable": true
     },
     "type": "Extended color light",
-    "name": "Luz G2",
+    "name": "Luz roja",
     "modelid": "LLC020",
     "manufacturername": "Philips",
     "uniqueid": "00:17:88:01:01:19:4e:16-0b",

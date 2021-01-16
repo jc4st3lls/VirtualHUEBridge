@@ -4,18 +4,18 @@
 <major>1</major>
 <minor>0</minor>
 </specVersion>
-<URLBase>http://192.168.1.99:80/</URLBase>
+<URLBase>http://[IP]:80/</URLBase>
 <device>
 <deviceType>urn:schemas-upnp-org:device:Basic:1</deviceType>
-<friendlyName>Philips hue (192.168.1.99)</friendlyName>
+<friendlyName>Philips hue ([IP])</friendlyName>
 <manufacturer>Signify</manufacturer>
 <manufacturerURL>http://www.philips.com</manufacturerURL>
 <modelDescription>Philips hue Personal Wireless Lighting</modelDescription>
 <modelName>Philips hue bridge 2015</modelName>
 <modelNumber>BSB002</modelNumber>
 <modelURL>http://www.meethue.com</modelURL>
-<serialNumber>192.168.1.99</serialNumber>
-<UDN>uuid:2f402f80-da50-11e1-9b23-192.168.1.99</UDN>
+<serialNumber>[IP]</serialNumber>
+<UDN>uuid:2f402f80-da50-11e1-9b23-[IP]</UDN>
 <presentationURL>index.html</presentationURL>
 <iconList>
 <icon>

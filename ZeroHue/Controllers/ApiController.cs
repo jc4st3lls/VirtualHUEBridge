@@ -68,7 +68,7 @@ namespace ZeroHue.Controllers
             return NotFound();
         }
 
-        
+        // En aquesta versió només jugeum amb la propietat on (per encendre o apagar)
         [HttpPut("{username}/lights/{id}/state")]
         public async Task<ActionResult> PutState(string username,int id, [FromBody] LightState value)
         {
@@ -87,45 +87,49 @@ namespace ZeroHue.Controllers
 
             string statepropertyjson = "{" + $" \"{_success}\": " + "{ " + $"\"{stateproperty}\": {statepropertyvalue}" + "} }";
             response.Add(statepropertyjson);
-            if (value.Bri != 0)
-            {
-                property = "bri";
-                stateproperty = $"/lights/{id}/state/{property}";
-                statepropertyvalue = value.Bri.ToString();
 
-                statepropertyjson = "{" + $" \"{_success}\": " + "{ " + $"\"{stateproperty}\": {statepropertyvalue}" + "} }";
-                response.Add(statepropertyjson);
-            }
-            if (value.Ct.HasValue)
-            {
-                property = "ct";
-                stateproperty = $"/lights/{id}/state/{property}";
-                statepropertyvalue = value.Ct.Value.ToString();
+            // Aqui unes quantes propietats més de la bombeta
+            // TO-DO
 
-                statepropertyjson = "{" + $" \"{_success}\": " + "{ " + $"\"{stateproperty}\": {statepropertyvalue}" + "} }";
-                response.Add(statepropertyjson);
+            //if (value.Bri != 0)
+            //{
+            //    property = "bri";
+            //    stateproperty = $"/lights/{id}/state/{property}";
+            //    statepropertyvalue = value.Bri.ToString();
 
-            }
-            if (value.Hue.HasValue)
-            {
-                property = "hue";
-                stateproperty = $"/lights/{id}/state/{property}";
-                statepropertyvalue = value.Hue.Value.ToString();
+            //    statepropertyjson = "{" + $" \"{_success}\": " + "{ " + $"\"{stateproperty}\": {statepropertyvalue}" + "} }";
+            //    response.Add(statepropertyjson);
+            //}
+            //if (value.Ct.HasValue)
+            //{
+            //    property = "ct";
+            //    stateproperty = $"/lights/{id}/state/{property}";
+            //    statepropertyvalue = value.Ct.Value.ToString();
 
-                statepropertyjson = "{" + $" \"{_success}\": " + "{ " + $"\"{stateproperty}\": {statepropertyvalue}" + "} }";
-                response.Add(statepropertyjson);
+            //    statepropertyjson = "{" + $" \"{_success}\": " + "{ " + $"\"{stateproperty}\": {statepropertyvalue}" + "} }";
+            //    response.Add(statepropertyjson);
 
-            }
-            if (value.Sat.HasValue)
-            {
-                property = "sat";
-                stateproperty = $"/lights/{id}/state/{property}";
-                statepropertyvalue = value.Sat.Value.ToString();
+            //}
+            //if (value.Hue.HasValue)
+            //{
+            //    property = "hue";
+            //    stateproperty = $"/lights/{id}/state/{property}";
+            //    statepropertyvalue = value.Hue.Value.ToString();
 
-                statepropertyjson = "{" + $" \"{_success}\": " + "{ " + $"\"{stateproperty}\": {statepropertyvalue}" + "} }";
-                response.Add(statepropertyjson);
+            //    statepropertyjson = "{" + $" \"{_success}\": " + "{ " + $"\"{stateproperty}\": {statepropertyvalue}" + "} }";
+            //    response.Add(statepropertyjson);
 
-            }
+            //}
+            //if (value.Sat.HasValue)
+            //{
+            //    property = "sat";
+            //    stateproperty = $"/lights/{id}/state/{property}";
+            //    statepropertyvalue = value.Sat.Value.ToString();
+
+            //    statepropertyjson = "{" + $" \"{_success}\": " + "{ " + $"\"{stateproperty}\": {statepropertyvalue}" + "} }";
+            //    response.Add(statepropertyjson);
+
+            //}
 
 
             //response[0] = "{ \"success\": { \"/lights/1/state/bri\": 200 } }";
@@ -133,7 +137,7 @@ namespace ZeroHue.Controllers
             //response[2] = @"{ ""success"": { ""/lights/1/state/hue"": 200 } }";
 
 
-            string json = $"[{string.Join(",", response)}]";
+            string json = $"[{string.Join(",", response)}]"; //Missatge de resposta
 
 
             System.Text.Json.JsonDocument jdoc = System.Text.Json.JsonDocument.Parse(json);
@@ -144,7 +148,7 @@ namespace ZeroHue.Controllers
 
         }
 
-        // Bad Security!!
+        // Bad Security!! La seguretat és un usuari permés.
         private bool PassSecurity(string username)
         {
             return username.Equals(AppSet.USERNAME)

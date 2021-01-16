@@ -34,7 +34,7 @@ function readyFN() {
 function DisplayLights() {
 
     $("#LIGHTS").html('');
-    var inner = '';
+    var _inner = '';
     $.getJSON(_BASEPATH_ + "v83b77802v/lights").done(function (json) {
 
         var lights = json;
@@ -52,53 +52,54 @@ function DisplayLights() {
 
             if (ligthstate) {
                 img = GetLight(id);
-                }     
+                     
             }
 
-            inner += '<div class="row">';
-            inner += '<div col="col"><img id="'+ ObjId +'" src="' + img + '" width="100" /></div>';
-            inner += '<div col="col"><label>' + lightname + '</label></div>';
-            inner += '</div>';
+            _inner += '<div class="row">';
+            _inner += '<div col="col"><img id="'+ ObjId +'" src="' + img + '" width="100" /></div>';
+            _inner += '<div col="col"><label>' + lightname + '</label></div>';
+            _inner += '</div>';
 
 
 
         });
 
-        $("#LIGHTS").html(inner);
+        $("#LIGHTS").html(_inner);
        
 
     });
 
-    function GetLight(id) {
-        var img = '';
-            switch (id) {
-                case "1": {
-                    img = "/img/lightblue.png";
-                    break;
-                }
-                case "2": {
-                    img = "/img/lightyellow.png";
-                    break;
-                }
-                case "3": {
-                    img = "/img/lightgreen.png";
-                    break;
-                }
-                case "4": {
-                    img = "/img/lightred.png";
-                    break;
-                }
-                case "5": {
-                    img = "/img/lightcolors.gif";
-                    break;
-                }
-
-                default: {
-                    img = "/img/lighton.png";
-                }
-        
+    
+}
+function GetLight(id) {
+    var img = '';
+    switch (id) {
+        case "1": {
+            img = "/img/lightblue.png";
+            break;
+        }
+        case "2": {
+            img = "/img/lightyellow.png";
+            break;
+        }
+        case "3": {
+            img = "/img/lightgreen.png";
+            break;
+        }
+        case "4": {
+            img = "/img/lightred.png";
+            break;
+        }
+        case "5": {
+            img = "/img/lightcolors.gif";
+            break;
         }
 
-        return img;
+        default: {
+            img = "/img/lighton.png";
+        }
+
     }
+
+    return img;
 }
