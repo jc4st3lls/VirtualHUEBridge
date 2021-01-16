@@ -45,7 +45,10 @@ En aquest repositori trobem una solució amb dos projectes desenvolupats amb Net
 Primer de tot cal modificar alguns paràmetres de configuració. Al projecte que permet en "Discovery", cal modificar dins la classe AppSet.cs, les propietats:
 
 FrontendIP=[IP del front end de la API]
+<<<<<<< HEAD
 
+=======
+>>>>>>> 94dc9999c1937184b7d2571b30c0e61764f0468c
 EchoIP=[IP del Echo]
 
 Al projecte de la API, cal modificar el fitxer de configuració appsettings.json:
@@ -68,11 +71,15 @@ Al projecte de la API, cal modificar el fitxer de configuració appsettings.json
     }
 
 FrontendIP=[IP del front end de la API]
+<<<<<<< HEAD
 
+=======
+>>>>>>> 94dc9999c1937184b7d2571b30c0e61764f0468c
 ApiPort=[Port accés a la API]
 
 La Api ara està programada perque corri en el port 80. Però si al host tenim un nginx, un apache o un IIS corrent (o altres), tindrant el port ocupat i no funcionarà. Aleshores hem de canviar el port de la api, i fer un reverse proxy des del nginx, apache o IIS cap al port de la API. També podem crear un contenidor de la Api i fer el mateix.
 
+<<<<<<< HEAD
 Un cop fet això, engeguem primer de tot la API. S'obrirà una plana html molt simple, amb unes llums virtuals apagades.
 
 Tot seguit engeguem el projecte de "discovery". Aquest es manté a l'espera fins que rep solicituts del l'Echo.
@@ -85,5 +92,11 @@ Si tot va bé, trobarà 5 bombetes, que es poden engegar i apagar. Si observeu l
 A partir d'aquí, imaginació. 
 
 Si volem controlar dispositius reals on/off, només cal fixar-nos en la interfície **INotificationService**, la implementació per a les bombetes virtuals **NotificationSignalRService** i el componet que actua quan es produeixen els esdeveniments **LightsMessageCenter**.
+=======
+Un cop fet això, engeguem primer de tot la API. S'obrirà una plana html mol simple, amb unes llums virtuals apagades.
+
+
+
+>>>>>>> 94dc9999c1937184b7d2571b30c0e61764f0468c
 
 
