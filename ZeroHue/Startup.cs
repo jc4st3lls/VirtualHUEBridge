@@ -35,12 +35,12 @@ namespace ZeroHue
 
         private void CreateDescriptionFile()
         {
-            if (!System.IO.File.Exists("./wwwroot/description.xml"))
-            {
+            //if (!System.IO.File.Exists("./wwwroot/description.xml"))
+            //{
                 var description = System.IO.File.ReadAllText($"{AppSet.PATH_FILES}description.xml");
                 description = description.Replace("[IP]", AppSet.FrontendIP);
                 System.IO.File.WriteAllText("./wwwroot/description.xml", description);
-            }
+            //}
            
         }
 
