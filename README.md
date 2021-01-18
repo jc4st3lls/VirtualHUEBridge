@@ -1,4 +1,4 @@
-﻿## Emulate a PHILIPS HUE Bridge V3
+﻿## Emulate PHILIPS HUE Bridge V3
 
 **Emulador d'un Bridge HUE V3 de Philips compatible amb Alexa**
 
