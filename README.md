@@ -10,7 +10,7 @@ Aleshores, vaig començar a investigar si tot era així. Vaig trobar informació
 
 **Hacking Alexa**
 
-Per saber com cerca dispositius l'Echo, vaig captura tots els paquets de xarxa d'aquest, quan aquest cerca dispositius. El que envia per descubrir dispositius com era d’esperar, són cerques
+Per saber com cerca dispositius l'Echo, vaig captura tots els paquets de xarxa d'aquest, quan aquest cerca dispositius. El que envia per trobar dispositius com era d’esperar, són cerques
 
  SSDP [https://es.wikipedia.org/wiki/SSDP](https://es.wikipedia.org/wiki/SSDP), concretament:
 
@@ -38,11 +38,11 @@ Per saber com ho fa, podeu investigar el codi que deixo aquí o seguir el passos
 
 **Solució**
 
-En aquest repositori trobem una solució amb dos projectes desenvolupats amb Net Core 3.1. Cada projecte es correspon a una de les fases, la de connexió (cal executar el primer cop, quan l’Echo cerca, detecta i configura) i la api que emula el bridge (només bombetes), que cal sempre. A la api hi he afegit unes bombetes virtuals a través d'una plana html.
+En aquest repositori trobem una solució amb dos projectes desenvolupats amb Net Core 3.1. Cada projecte es correspon a una de les fases, la de connexió (cal executar el primer cop, quan l’Echo cerca, detecta i configura) i la api que emula el bridge (només bombetes), que cal sempre. A la api hi he afegit unes bombetes virtuals a través d'una plana html (http://[FrontendIP]/index.html).
 
 **Funcionamet**
 
-Primer de tot cal modificar alguns paràmetres de configuració. Al projecte que permet en "Discovery", cal modificar dins la classe AppSet.cs, les propietats:
+Primer de tot cal modificar alguns paràmetres de configuració. Al projecte que permet el "Discovery", cal modificar dins la classe AppSet.cs, les propietats:
 
 FrontendIP=[IP del front end de la API]
 
