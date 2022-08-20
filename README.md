@@ -1,4 +1,4 @@
-﻿## Emulate PHILIPS HUE Bridge V3
+## Emulate PHILIPS HUE Bridge V3
 
 **Emulador d'un Bridge HUE V3 de Philips compatible amb Alexa**
 
@@ -87,4 +87,6 @@ A partir d'aquí, imaginació.
 Si volem controlar dispositius reals on/off, només cal fixar-nos en la interfície **INotificationService**, la implementació per a les bombetes virtuals **NotificationSignalRService** i el componet que actua quan es produeixen els esdeveniments **LightsMessageCenter**.
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jcastellsgH)
+
+
 :_)
