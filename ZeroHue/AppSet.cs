@@ -17,6 +17,7 @@ namespace ZeroHue
         public const string USERNAME = "83b7780291a6ceffbe0bd049104df";
         public const string VIEWUSERNAME = "v83b77802v";
 
+        public static string ApiIP { get; internal set; }
         public static string ApiPort { get; internal set; }
 
         public static string FrontendIP { get; internal set; }

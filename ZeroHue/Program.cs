@@ -20,7 +20,8 @@ var _log = _logfac.CreateLogger("Configuration");
 
 _log.LogInformation($"ZeroHue");
 
-AppSet.ApiPort = builder.Configuration["ApiPort"];
+AppSet.ApiIP = builder.Configuration["Api:IP"];
+AppSet.ApiPort = builder.Configuration["Api:Port"];
 AppSet.FrontendIP = builder.Configuration["UPNP:FrontendIP"];
 AppSet.FrontendPort = builder.Configuration["UPNP:FrontendPort"];
 //192.16FFFE8.1.99
@@ -66,7 +67,7 @@ var app = builder.Build();
 
 app.UseStaticFiles();
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
@@ -84,7 +85,8 @@ void CreateDescriptionFile()
     //if (!System.IO.File.Exists("./wwwroot/description.xml"))
     //{
     var description = System.IO.File.ReadAllText($"{AppSet.PATH_FILES}description.xml");
-    description = description.Replace("[IP]", AppSet.FrontendIP);
+    description = description.Replace("[IP]", AppSet.ApiIP);
+    description = description.Replace("[PORT]", AppSet.ApiPort);
     System.IO.File.WriteAllText("./wwwroot/description.xml", description);
     //}
 

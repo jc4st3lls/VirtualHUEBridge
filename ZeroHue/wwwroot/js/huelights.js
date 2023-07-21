@@ -10,6 +10,9 @@ function readyFN() {
 
     connection.on("ReceiveONState", function (id, state) {
         var img = "/img/lightoff.png";
+        if (id === '6') {
+            img = "/img/fan-gif-76-blue-fan-moving-off.png";
+        }
         if (state) {
             img = GetLight(id);
         }
@@ -49,9 +52,13 @@ function DisplayLights() {
             var ligthstate = light["state"]["on"];
 
             var img = "/img/lightoff.png";
+            if (key === '6') {
+                img = "/img/fan-gif-76-blue-fan-moving-off.png";
+            }
+
 
             if (ligthstate) {
-                img = GetLight(id);
+                img = GetLight(key);
                      
             }
 
@@ -94,6 +101,11 @@ function GetLight(id) {
             img = "/img/lightcolors.gif";
             break;
         }
+        case "6": {
+            img = "/img/fan-gif-76-blue-fan-moving-on.png";
+            break;
+        }
+
 
         default: {
             img = "/img/lighton.png";

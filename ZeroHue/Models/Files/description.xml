@@ -4,7 +4,7 @@
 <major>1</major>
 <minor>0</minor>
 </specVersion>
-<URLBase>http://[IP]:80/</URLBase>
+<URLBase>http://[IP]:[PORT]/</URLBase>
 <device>
 <deviceType>urn:schemas-upnp-org:device:Basic:1</deviceType>
 <friendlyName>Philips hue ([IP])</friendlyName>

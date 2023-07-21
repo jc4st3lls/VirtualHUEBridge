@@ -128,6 +128,22 @@
     "swversion": "1.50.2_r30933",
     "type": "Color temperature light",
     "uniqueid": "00:17:88:01:06:13:e5:55-0b"
+  },
+  "6": {
+    "state": {
+      "on": false,
+      "bri": 254,
+      "alert": "none",
+      "reachable": true
+    },
+    "type": "Dimmable light",
+    "name": "Ventilador",
+    "modelid": "LWB014",
+    "manufacturername": "Philips",
+    "uniqueid": "00:17:88:01:02:f6:32:23-0b",
+    "swversion": "1.15.2_r19181",
+    "swconfigid": "D1D2055F",
+    "productid": "Philips-LWB014-1-A19DLv3"
   }
 
 }

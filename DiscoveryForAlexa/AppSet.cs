@@ -6,10 +6,10 @@ namespace DiscoveryForAlexa
         internal static string BroadcastIP { set; get; } = "239.255.255.250";
         internal static string BroadcastPort { set; get; } = "1900";
 
-        internal static string FrontendIP { get; set; } = "192.168.1.46";
+        internal static string FrontendIP { get; set; } = "192.168.1.33";
         internal static string FrontendPort { get; set; } = "80";
 
-        internal static string EchoIP { get; set; } = "192.168.1.98";
+        internal static string EchoIP { get; set; } = "192.168.1.36";
 
         internal static string Huebridgeid { get; set; } = "";
         static AppSet()
